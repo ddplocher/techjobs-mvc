@@ -10,18 +10,19 @@
     <div class="container body-content">
         <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
         <div th:if="${jobs} and ${jobs.size()}">
-            <a th:text = "${jobs.size()}">"Total Jobs"</a>
+
+            <span th:text = "${jobs.size()}"></span>
+                  <span>Total </span>
 
 
 
-            <table>
-                <tr th:each="job : ${jobs}">
-                    <td th:each="mapEntry : ${job}">
-                     <a th:text ="${mapEntry.key}"></a>
-                        <a th:text="${mapEntry.value}"></a></td>
-
-                 </tr>
+            <table class= "job-listing" th:each="job : ${jobs}">
+                <tr th:each="mapEntry : ${job}">
+                    <td th:text ="${mapEntry.key}"> </td>
+                    <td th:text="${mapEntry.value}"></td>
+                </tr>
             </table>
+
 
         </div>
 
