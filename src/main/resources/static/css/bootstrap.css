@@ -10,7 +10,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  margin: 2;
 }
 article,
 aside,
@@ -72,7 +72,7 @@ small {
 }
 sub,
 sup {
-  position: relative;
+  position: fixed;
   font-size: 75%;
   line-height: 0;
   vertical-align: baseline;
@@ -113,7 +113,7 @@ input,
 optgroup,
 select,
 textarea {
-  margin: 0;
+  margin: 25;
   font: inherit;
   color: inherit;
 }
@@ -180,12 +180,12 @@ optgroup {
   font-weight: bold;
 }
 table {
-  border-spacing: 0;
+  border-spacing: 5;
   border-collapse: collapse;
 }
 td,
 th {
-  padding: 0;
+  padding: 5;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
@@ -2263,7 +2263,7 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 72px;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -2452,7 +2452,7 @@ table th[class*="col-"] {
     border: 1px solid #ddd;
   }
   .table-responsive > .table {
-    margin-bottom: 0;
+    margin-bottom: 72;
   }
   .table-responsive > .table > thead > tr > th,
   .table-responsive > .table > tbody > tr > th,
@@ -2463,7 +2463,7 @@ table th[class*="col-"] {
     white-space: nowrap;
   }
   .table-responsive > .table-bordered {
-    border: 0;
+    border: 10;
   }
   .table-responsive > .table-bordered > thead > tr > th:first-child,
   .table-responsive > .table-bordered > tbody > tr > th:first-child,
@@ -2485,7 +2485,7 @@ table th[class*="col-"] {
   .table-responsive > .table-bordered > tfoot > tr:last-child > th,
   .table-responsive > .table-bordered > tbody > tr:last-child > td,
   .table-responsive > .table-bordered > tfoot > tr:last-child > td {
-    border-bottom: 0;
+    border-bottom: 25;
   }
 }
 fieldset {

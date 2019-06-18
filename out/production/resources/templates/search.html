@@ -36,23 +36,21 @@
 </div>
 <div class="container body-content">
 
-<p th:unless = "${positions} and ${positions.size()}"> No Jobs </p>
 
-<ul>
-    <div th:each="position : ${positions}">
-        <div th:each = "mapEntry : ${position}">
+    <div th:if="${positions} and ${positions.size()}">
 
-            <a th:text ="${mapEntry.key}"></a>
-            <a th:text="${mapEntry.value}"></a>
-        </div>
+
+
+    <table th:each="position : ${positions}">
+            <tr th:each="mapEntry : ${position}">
+                <td th:text ="${mapEntry.key}"> </td>
+                <td th:text="${mapEntry.value}"></td>
+            </tr>
+    </table>
+
     </div>
-</ul>
-
-
-<!-- TODO #2 - Loop over jobs map to display all job fields -->
-
 </div>
-
+<!-- TODO #2 - Loop over jobs map to display all job fields -->
 
 </body>
 </html>

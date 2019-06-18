@@ -7,9 +7,6 @@
 <div th:replace="fragments :: page-header"></div>
 
 
-
-</body>
-
 <div class="container body-content">
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
     <p th:unless = "${positions} and ${positions.size()}"> No Jobs </p>
@@ -28,4 +25,5 @@
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
 </div>
+</body>
 </html>

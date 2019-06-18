@@ -20,24 +20,32 @@ public class SearchController {
 
     @RequestMapping(value = "")
     public String search(Model model) {
-        ArrayList<HashMap<String, String>> jobs = JobData.findAll();
-
-        model.addAttribute("jobs", jobs);
+//        ArrayList<HashMap<String, String>> jobs = JobData.findAll();
+//        model.addAttribute("jobs", jobs);
         model.addAttribute("columns", ListController.columnChoices);
         return "search";
     }
 
-    @RequestMapping(value = "results")
-    public String searchResults(Model model,
-                                @RequestParam String searchType, @RequestParam String searchTerm) {
-        if (searchType.equals("all")) {
+    @RequestMapping("results")
+    public String search(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
+        ArrayList<HashMap<String, String>> positions = new ArrayList<>();
 
-            model.addAttribute("positions", JobData.findByValue(searchTerm));
-            model.addAttribute("columns", ListController.columnChoices);
+        if (!searchType.equals("all")) {
+            positions = JobData.findByColumnAndValue(searchType, searchTerm);
         } else {
-            model.addAttribute("positions", JobData.findByColumnAndValue(searchTerm, searchType));
-            model.addAttribute("columns", ListController.columnChoices);
+            if (!searchTerm.isEmpty()){
+                positions = JobData.findByValue(searchTerm);
+            } else {
+                positions = JobData.findAll();
+            }
+//
         }
+        model.addAttribute("columns", ListController.columnChoices);
+        model.addAttribute("positions", positions);
+
+
+
+
         return "search";
     }
 }

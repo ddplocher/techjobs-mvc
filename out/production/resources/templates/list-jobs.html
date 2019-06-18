@@ -9,17 +9,25 @@
 
     <div class="container body-content">
         <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+        <div th:if="${jobs} and ${jobs.size()}">
+            <a th:text = "${jobs.size()}">"Total Jobs"</a>
 
-        <ul>
-            <div th:each="job : ${jobs}">
-                <div th:each = "mapEntry : ${job}">
 
-                    <a th:text ="${mapEntry.key}"></a>
-                    <a th:text="${mapEntry.value}"></a>
-                </div>
-            </div>
-        </ul>
-    </div>
+
+            <table>
+                <tr th:each="job : ${jobs}">
+                    <td th:each="mapEntry : ${job}">
+                     <a th:text ="${mapEntry.key}"></a>
+                        <a th:text="${mapEntry.value}"></a></td>
+
+                 </tr>
+            </table>
+
+        </div>
+
+        </div>
+
+
     //<!-- TODO #3 - Use the same list display from search.html -->
 
 
